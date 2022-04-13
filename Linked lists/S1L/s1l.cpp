@@ -8,6 +8,16 @@ s1l::s1l(int data) {
     fstNode->key = data;
 }
 
+s1l::s1l(int n, int data[]) {
+    fstNode = new E1;
+    fstNode->next = NULL;
+    fstNode->key = data[0];
+
+    for (int i = 1; i < n; i++) {
+        pushBack(data[i]);
+    }
+}
+
 s1l::~s1l()
 {
     E1 *p;
@@ -40,6 +50,8 @@ void s1l::pushBack(int data)
 
 int s1l::operator[](int index)
 {
+    // Kéne exception handling túlindexelésre
+    
     E1 *helperNode;
     helperNode = fstNode;
 
@@ -48,4 +60,19 @@ int s1l::operator[](int index)
     }
 
     return helperNode->key;
+}
+
+void s1l::reverse() {
+    E1* p;
+    E1* q;
+
+    p = fstNode;
+    fstNode = NULL;
+
+    while (p) {
+        q = p;
+        p = p->next;
+        q->next = fstNode;
+        fstNode = q;
+    }
 }
