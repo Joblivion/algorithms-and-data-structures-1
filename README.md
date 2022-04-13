@@ -1,10 +1,10 @@
 # algorithms-and-data-structures-1
 To implement:
 - Sorting
-  - Quicksort ✅
+  - Quicksort ✔️
   - Mergesort
 - Linked lists
-  - S1L ✅
+  - S1L ✔️
   - H1L
   - C2L
   - Queue (w/ S1L)
