@@ -11,7 +11,8 @@ To implement:
   - S1L ✔️
   - H1L
   - C2L
-  - Queue (w/ S1L)
+  - Set (with S1L)
+  - Queue (with S1L)
 - Binary tree
 
 Items are continously added as I procede with the university course.
