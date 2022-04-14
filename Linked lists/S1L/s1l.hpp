@@ -6,6 +6,7 @@
 class s1l {
     protected:
         E1* fstNode;
+        int _length;
     public:
         s1l(int data);
         s1l(int n,int data[]);
@@ -13,10 +14,13 @@ class s1l {
         
         void pushBack(int data);
         void pop();
-        void remove(int index);
-        void removeValue(int key);
+        void assignValue(int index, int data);
+        void removeAtIndex(int index); // kell még
+        void removeValueOf(int data); // kell még
         int operator[](int index);
         void reverse();
+        int length();
+
 };
 
 #endif

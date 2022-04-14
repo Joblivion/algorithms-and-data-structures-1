@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    cout << "-- Testing S1L --" << endl;
+    cout << "-- Testing S1L-s --" << endl;
 
     int elements[4] = {1,2,3,4};
     s1l myList(4,elements);
@@ -13,26 +13,28 @@ int main() {
     myList.pushBack(1);
     myList.pushBack(10);
     myList.pushBack(101);
+    myList.pop();
+    myList.pop();
 
     cout << myList[0] << endl;
     cout << myList[1] << endl;
     cout << myList[2] << endl;
     cout << myList[3] << endl;
     cout << myList[4] << endl;
-    cout << myList[5] << endl;
-    cout << myList[6] << endl << endl;
+    cout << "length: " << myList.length() << endl << endl;
 
     myList.reverse();
+    myList.pop();
+    myList.pop();
+    myList.assignValue(1,999);
 
     cout << myList[0] << endl;
     cout << myList[1] << endl;
     cout << myList[2] << endl;
-    cout << myList[3] << endl;
-    cout << myList[4] << endl;
-    cout << myList[5] << endl;
-    cout << myList[6] << endl << endl;
 
-    cout << "-- Testing Set implemented with S1L --" << endl;
+    cout << "length: " << myList.length() << endl << endl;
+
+    cout << "-- Testing Sets --" << endl;
 
 
     return 0;
