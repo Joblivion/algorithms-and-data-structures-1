@@ -13,7 +13,6 @@ class set: private s1l {
         void reverse();
 
         using s1l::s1l;
-        using s1l::~s1l;
 };
 
 #endif
