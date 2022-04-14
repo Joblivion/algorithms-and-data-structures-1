@@ -34,7 +34,46 @@ int main() {
 
     cout << "length: " << myList.length() << endl << endl;
 
-    cout << "-- Testing Sets --" << endl;
+    s1l otherList(0);
+    for (int i = 1; i < 5; i++) {
+        otherList.pushBack(i*10);
+    }
+
+    for (int i = 0; i < 5; i++) {
+        cout << otherList[i] << endl;
+    }
+
+    cout << "otherList hossza: (5) " <<  otherList.length() << endl;
+
+    otherList.removeValueOf(20);
+
+    for (int i = 0; i < 4; i++) {
+        cout << otherList[i] << endl;
+    }
+    
+    cout << "otherList hossza: (4) " <<  otherList.length() << endl; 
+
+    otherList.removeValueOf(40);
+
+    for (int i = 0; i < 3; i++) {
+        cout << otherList[i] << endl;
+    }
+    
+    cout << "otherList hossza: (3) " <<  otherList.length() << endl;
+
+    otherList.removeValueOf(0);
+
+    for (int i = 0; i < 2; i++) {
+        cout << otherList[i] << endl;
+    }
+    
+    cout << "otherList hossza: (2) " <<  otherList.length() << endl;
+
+    otherList.removeValueOf(9999);
+
+    ///////////////////////////////////////////////////////////
+
+    cout << endl << "-- Testing Sets --" << endl;
 
 
     return 0;

@@ -15,8 +15,8 @@ class s1l {
         void pushBack(int data);
         void pop();
         void assignValue(int index, int data);
-        void removeAtIndex(int index); // kell még
-        void removeValueOf(int data); // kell még
+        void removeAtIndex(int index);
+        void removeValueOf(int data);
         int operator[](int index);
         void reverse();
         int length();

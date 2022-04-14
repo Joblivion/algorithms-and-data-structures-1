@@ -78,36 +78,58 @@ void s1l::assignValue(int index, int data)
 
 void s1l::removeAtIndex(int index)
 {
-    E1 *helperNode;
-    helperNode = fstNode;
+    E1 *p, *q;
+    p = fstNode;
 
-    for (int i = 0; i < index; i++) {
-        helperNode = helperNode->next;
+    if (index == 0) {
+        fstNode = fstNode->next;
+        delete p;
+    } else {
+        for (int i = 1; i < index; i++) {
+            p = p->next;
+        }
+        if (p->next->next) {
+            q = p->next;
+            p->next = p->next->next;
+            delete q;
+        } else {
+            delete p->next;
+            p->next = NULL;
+        }
     }
-
-
 }
 
 void s1l::removeValueOf(int data)
 {
-    E1 *helperNode;
-    helperNode = fstNode;
+    E1 *p, *q;
+    p = fstNode;
 
-    while (helperNode->next && helperNode->key != data) {
-        helperNode = helperNode->next;
-    }
-
-    if (helperNode->key == data) {
-        //remove node
+    if (p->key == data) {
+        fstNode = fstNode->next;
+        delete p;
     } else {
-        // Exception handling instead!
-        std::cerr << "Data is was not found in the list" << std::endl;
+        while (p->next->next && p->next->key != data) {
+            p = p->next;
+        }
+        if (p->next->key == data) {
+            if (p->next->next) {
+                q = p->next;
+                p->next = p->next->next;
+                delete q;
+            } else {
+                delete p->next;
+                p->next = NULL;
+            }
+        } else {
+            // Exception handling instead!
+            std::cerr << "Data was not found in the list" << std::endl;
+        }
     }
 }
 
 int s1l::operator[](int index)
 {
-    // Kéne exception handling túlindexelésre
+    // Exception handling túlindexelésre
     
     E1 *helperNode;
     helperNode = fstNode;
